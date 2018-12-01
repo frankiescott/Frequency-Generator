@@ -11,9 +11,6 @@ def make_soundfile(freq=440, data_size=10000, file_name="test.wav"):
         sine_list.append(math.sin(2 * math.pi * freq * (x / frate)))
 
     wav_file = wave.open(file_name, "w")
-    comptype = "NONE"
-    compname = "not compressed"
-
     wav_file.setparams((1, 2, frate, data_size, "NONE", "not compressed"))
     for s in sine_list:
         wav_file.writeframes(struct.pack('h', int(s * amp / 2)))
