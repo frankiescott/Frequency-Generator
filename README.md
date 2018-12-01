@@ -2,7 +2,8 @@
 
 Generates a wav file for each musical note frequency.
 
-```C0	16.35hz
+```Note   Frequency
+C0	16.35hz
 
 C#0	17.32hz
 
