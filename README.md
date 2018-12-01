@@ -2,6 +2,95 @@
 
 Generates a wav file for each musical note frequency.
 
+
+p1.py
+p2.py
+p5.py
+p6.py
+p7.py
+p8.py
+main.py
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+1
+2
+3
+4
+5
+6
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+    amp = 8000.0
+ 
+    sine_list = []
+    for x in range(data_size):
+        sine_list.append(math.sin(2 * math.pi * freq * (x / frate)))
+ 
+    wav_file = wave.open(file_name, "w")
+    wav_file.setparams((1, 2, frate, data_size, "NONE", "not compressed"))
+    for s in sine_list:
+        wav_file.writeframes(struct.pack('h', int(s * amp / 2)))
+    wav_file.close()
+ 
+notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+hz = 440
+set = []
+for i in range(0, 9):
+    for j in range(0, 12):
+        set.append([notes[j] + str(i)])
+import math
+import struct
+import wave
+ 
+def make_soundfile(freq, data_size, file_name):
+    frate = 44100.0
+ 
+set[57].append(hz)
+for i in range(58, len(set)):
+    set[i].append(hz * pow(1.059463, i - 57))
+ 
+for i in range(0, 57):
+    set[i].append(hz * pow(1.059463, -(57 - i)))
+ 
+print("```Note\tFrequency")
+for i in range(0, len(set)):
+    print(set[i][0] + "\t" + str("%.2f" % set[i][1]) + "hz")
+print("```")
+#for i in range(0, len(set)):
+    #make_soundfile(int(set[i][1]), 40000, set[i][0] + ".wav")
+ 
+
+                                                                                                                                                           
+Python - main.py:36
 ```Note	Frequency
 C0	16.35hz
 C#0	17.32hz
@@ -110,4 +199,5 @@ G8	6271.90hz
 G#8	6644.85hz
 A8	7039.97hz
 A#8	7458.59hz
-B8	7902.10hz```
+B8	7902.10hz
+```
