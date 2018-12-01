@@ -2,7 +2,7 @@ import math
 import struct
 import wave
 
-def make_soundfile(freq=440, data_size=10000, file_name="test.wav"):
+def make_soundfile(freq, data_size, file_name):
     frate = 44100.0
     amp = 8000.0
 
