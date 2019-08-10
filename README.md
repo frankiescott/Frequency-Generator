@@ -1,6 +1,6 @@
 # Sound Frequency Generator
 
-Generates a wav file for each musical note frequency.
+This was a script I put together to generate a wav file for each musical note frequency. I then used select wav files for guitar tuning.
 
 ```Note	Frequency
 C0	16.35 hz
